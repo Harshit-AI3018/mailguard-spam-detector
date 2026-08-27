@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MailGuard | Email History</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="background">
+
+    <div class="glow glow-1"></div>
+
+    <div class="glow glow-2"></div>
+
+</div>
+
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🛡️
+        </div>
+
+        <div>
+
+            <h2>MailGuard</h2>
+
+            <p>Smart Spam Detection</p>
+
+        </div>
+
+    </div>
+
+
+    <a href="/" class="nav-history">
+        ✉️ Check Email
+    </a>
+
+</nav>
+
+
+
+<!-- MAIN -->
+
+<main class="history-main">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="history-hero">
+
+        <div>
+
+            <div class="history-small-title">
+                EMAIL MANAGEMENT
+            </div>
+
+            <h1>
+                Email History
+            </h1>
+
+            <p>
+                Review all emails that have been analyzed.
+            </p>
+
+        </div>
+
+
+        <a href="/" class="new-email-button">
+            + Analyze New Email
+        </a>
+
+    </section>
+
+
+
+    <!-- STATISTICS -->
+
+    <section class="history-stats">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon total-icon">
+                📧
+            </div>
+
+            <div>
+
+                <p>Total Emails</p>
+
+                <h2>
+                    {{ emails|length }}
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon spam-icon">
+                🚨
+            </div>
+
+            <div>
+
+                <p>Spam Emails</p>
+
+                <h2>
+
+                    {% set spam_count = 0 %}
+
+                    {% for email in emails %}
+
+                        {% if email[4] == "Spam" %}
+
+                            {% set spam_count = spam_count + 1 %}
+
+                        {% endif %}
+
+                    {% endfor %}
+
+                    {{ spam_count }}
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon safe-icon">
+                ✅
+            </div>
+
+            <div>
+
+                <p>Safe Emails</p>
+
+                <h2>
+
+                    {% set safe_count = 0 %}
+
+                    {% for email in emails %}
+
+                        {% if email[4] == "Not Spam" %}
+
+                            {% set safe_count = safe_count + 1 %}
+
+                        {% endif %}
+
+                    {% endfor %}
+
+                    {{ safe_count }}
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- EMAIL LIST -->
+
+    <section class="history-card">
+
+
+        <div class="history-card-header">
+
+            <div>
+
+                <h2>
+                    Analyzed Emails
+                </h2>
+
+                <p>
+                    Your recent email analysis results
+                </p>
+
+            </div>
+
+
+            <div class="email-count">
+
+                {{ emails|length }} Records
+
+            </div>
+
+        </div>
+
+
+
+        {% if emails %}
+
+
+        <div class="email-list">
+
+
+            {% for email in emails %}
+
+
+            <div class="email-item">
+
+
+                <!-- NUMBER -->
+
+                <div class="email-number">
+
+                    {{ email[0] }}
+
+                </div>
+
+
+
+                <!-- EMAIL INFORMATION -->
+
+                <div class="email-information">
+
+
+                    <div class="email-top">
+
+
+                        <div class="email-sender">
+
+                            <span class="sender-icon">
+                                👤
+                            </span>
+
+                            {{ email[1] }}
+
+                        </div>
+
+
+                        {% if email[4] == "Spam" %}
+
+                        <span class="status-spam">
+                            🚨 Spam
+                        </span>
+
+                        {% else %}
+
+                        <span class="status-safe">
+                            ✓ Not Spam
+                        </span>
+
+                        {% endif %}
+
+
+                    </div>
+
+
+
+                    <h3>
+
+                        {{ email[2] }}
+
+                    </h3>
+
+
+                    <p class="email-preview">
+
+                        {{ email[3] }}
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- DELETE -->
+
+                <form
+                    action="/delete/{{ email[0] }}"
+                    method="POST"
+                    onsubmit="return confirm('Are you sure you want to delete this email?');"
+                >
+
+                    <button
+                        type="submit"
+                        class="delete-icon"
+                        title="Delete email"
+                    >
+
+                        🗑️
+
+                    </button>
+
+                </form>
+
+
+            </div>
+
+
+            {% endfor %}
+
+
+        </div>
+
+
+        {% else %}
+
+
+        <!-- EMPTY -->
+
+        <div class="empty-history">
+
+            <div class="empty-history-icon">
+                📭
+            </div>
+
+            <h2>
+                No Email History
+            </h2>
+
+            <p>
+                You haven't analyzed any emails yet.
+            </p>
+
+            <a href="/" class="empty-action">
+                Analyze Your First Email
+            </a>
+
+        </div>
+
+
+        {% endif %}
+
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <p>
+
+        © 2026 MailGuard
+
+        <span>•</span>
+
+        Spam Detection System
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

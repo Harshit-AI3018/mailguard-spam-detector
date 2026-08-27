@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MailGuard | Spam Detector</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+</div>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🛡️
+        </div>
+
+        <div>
+            <h2>MailGuard</h2>
+            <p>Smart Spam Detection</p>
+        </div>
+
+    </div>
+
+
+    <a href="/history" class="nav-history">
+        📋 History
+    </a>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<main class="main-container">
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>
+            Detect Spam.
+            <br>
+            <span>Protect Your Inbox.</span>
+        </h1>
+
+        <p>
+            Analyze suspicious emails and instantly determine
+            whether they are spam or legitimate.
+        </p>
+
+    </section>
+
+
+
+    <!-- EMAIL CARD -->
+
+    <section class="email-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>Analyze an Email</h2>
+
+                <p>
+                    Enter the email details below
+                </p>
+
+            </div>
+
+            <div class="shield">
+                🛡️
+            </div>
+
+        </div>
+
+
+        <form action="/predict" method="POST">
+
+
+            <!-- SENDER -->
+
+            <div class="input-group">
+
+                <label for="sender">
+                    Sender Email
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        👤
+                    </span>
+
+                    <input
+                        type="email"
+                        id="sender"
+                        name="sender"
+                        placeholder="sender@example.com"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- SUBJECT -->
+
+            <div class="input-group">
+
+                <label for="subject">
+                    Subject
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        📝
+                    </span>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="Enter email subject"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- BODY -->
+
+            <div class="input-group">
+
+                <label for="body">
+                    Email Content
+                </label>
+
+                <div class="textarea-wrapper">
+
+                    <textarea
+                        id="body"
+                        name="body"
+                        placeholder="Paste the email content here..."
+                        required
+                    ></textarea>
+
+                    <span class="textarea-hint">
+                        Email content will be analyzed
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="submit"
+                class="analyze-button"
+            >
+
+                🔍
+
+                Analyze Email
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+        </form>
+
+
+        <!-- RESULT -->
+
+        {% if prediction %}
+
+            {% if prediction == "Spam" %}
+
+            <div class="prediction spam-result">
+
+                <div class="prediction-icon">
+                    🚨
+                </div>
+
+                <div class="prediction-content">
+
+                    <span class="prediction-label">
+                        THREAT DETECTED
+                    </span>
+
+                    <h2>
+                        This email is Spam
+                    </h2>
+
+                    <p>
+                        Suspicious characteristics were detected
+                        in this email.
+                    </p>
+
+                </div>
+
+            </div>
+
+            {% else %}
+
+            <div class="prediction safe-result">
+
+                <div class="prediction-icon">
+                    ✅
+                </div>
+
+                <div class="prediction-content">
+
+                    <span class="prediction-label">
+                        EMAIL IS SAFE
+                    </span>
+
+                    <h2>
+                        Not Spam
+                    </h2>
+
+                    <p>
+                        This email appears to be legitimate.
+                    </p>
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        {% endif %}
+
+    </section>
+
+
+
+    <!-- FEATURES -->
+
+    <section class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🤖
+            </div>
+
+            <div>
+
+                <h3>
+                    Machine Learning
+                </h3>
+
+                <p>
+                    Intelligent email classification
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⚡
+            </div>
+
+            <div>
+
+                <h3>
+                    Instant Detection
+                </h3>
+
+                <p>
+                    Get results in seconds
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <h3>
+                    Secure Storage
+                </h3>
+
+                <p>
+                    Results saved in PostgreSQL
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 MailGuard
+        <span>•</span>
+        Spam Detection System
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

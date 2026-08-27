@@ -1,0 +1,1568 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #070b17;
+
+    color: #ffffff;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+}
+
+
+.glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    opacity: 0.18;
+
+}
+
+
+.glow-1 {
+
+    width: 500px;
+
+    height: 500px;
+
+    background: #2563eb;
+
+    top: -200px;
+
+    left: -150px;
+
+}
+
+
+.glow-2 {
+
+    width: 450px;
+
+    height: 450px;
+
+    background: #7c3aed;
+
+    bottom: -200px;
+
+    right: -100px;
+
+}
+
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 25px 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.brand-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: rgba(37, 99, 235, 0.18);
+
+    border: 1px solid rgba(96, 165, 250, 0.2);
+
+    font-size: 25px;
+
+}
+
+
+.brand h2 {
+
+    font-size: 19px;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+.brand h2 span {
+
+    color: #60a5fa;
+
+}
+
+
+.brand p {
+
+    font-size: 11px;
+
+    color: #8b95aa;
+
+    margin-top: 2px;
+
+}
+
+
+.nav-history {
+
+    text-decoration: none;
+
+    color: #cbd5e1;
+
+    padding: 10px 17px;
+
+    border: 1px solid #273148;
+
+    border-radius: 9px;
+
+    background: rgba(255,255,255,0.03);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+
+}
+
+
+.nav-history:hover {
+
+    background: rgba(255,255,255,0.08);
+
+    border-color: #3b82f6;
+
+    color: white;
+
+}
+
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.main-container {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 45px 20px 30px;
+
+}
+
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+.ai-badge {
+
+    display: inline-block;
+
+    padding: 7px 13px;
+
+    border-radius: 50px;
+
+    background: rgba(37, 99, 235, 0.12);
+
+    border: 1px solid rgba(96, 165, 250, 0.2);
+
+    color: #60a5fa;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.hero h1 {
+
+    font-size: 50px;
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.hero h1 span {
+
+    color: #60a5fa;
+
+}
+
+
+.hero p {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #8b95aa;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =========================================
+   EMAIL CARD
+========================================= */
+
+.email-card {
+
+    background: rgba(15, 23, 42, 0.85);
+
+    border: 1px solid #263149;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow:
+
+        0 30px 80px rgba(0,0,0,0.35);
+
+    backdrop-filter: blur(15px);
+
+}
+
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.card-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.card-header h2 {
+
+    font-size: 21px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.card-header p {
+
+    color: #7d879c;
+
+    font-size: 13px;
+
+}
+
+
+.shield {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(37,99,235,0.12);
+
+    font-size: 24px;
+
+}
+
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.input-group {
+
+    margin-bottom: 22px;
+
+}
+
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    color: #cbd5e1;
+
+    font-weight: 600;
+
+}
+
+
+.input-wrapper {
+
+    position: relative;
+
+}
+
+
+.input-icon {
+
+    position: absolute;
+
+    left: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 15px;
+
+    opacity: 0.7;
+
+}
+
+
+input,
+textarea {
+
+    width: 100%;
+
+    border: 1px solid #29344a;
+
+    background: #0b1222;
+
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+
+}
+
+
+input {
+
+    height: 48px;
+
+    padding: 0 15px 0 43px;
+
+}
+
+
+input:focus,
+textarea:focus {
+
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 3px rgba(59,130,246,0.1);
+
+}
+
+
+input::placeholder,
+textarea::placeholder {
+
+    color: #566176;
+
+}
+
+
+.textarea-wrapper {
+
+    position: relative;
+
+}
+
+
+textarea {
+
+    height: 190px;
+
+    resize: vertical;
+
+    padding: 15px;
+
+}
+
+
+.textarea-hint {
+
+    position: absolute;
+
+    bottom: 12px;
+
+    right: 14px;
+
+    font-size: 10px;
+
+    color: #4d5870;
+
+}
+
+
+
+/* =========================================
+   ANALYZE BUTTON
+========================================= */
+
+.analyze-button {
+
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    transition: 0.2s;
+
+}
+
+
+.analyze-button:hover {
+
+    background: #3b82f6;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 25px rgba(37,99,235,0.3);
+
+}
+
+
+.analyze-button .arrow {
+
+    margin-left: 5px;
+
+}
+
+
+
+/* =========================================
+   PREDICTION
+========================================= */
+
+.prediction {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 20px;
+
+    border-radius: 13px;
+
+}
+
+
+.spam-result {
+
+    background: rgba(220,38,38,0.08);
+
+    border: 1px solid rgba(239,68,68,0.25);
+
+}
+
+
+.safe-result {
+
+    background: rgba(22,163,74,0.08);
+
+    border: 1px solid rgba(34,197,94,0.25);
+
+}
+
+
+.prediction-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 25px;
+
+}
+
+
+.spam-result .prediction-icon {
+
+    background: rgba(239,68,68,0.12);
+
+}
+
+
+.safe-result .prediction-icon {
+
+    background: rgba(34,197,94,0.12);
+
+}
+
+
+.prediction-label {
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+
+}
+
+
+.spam-result .prediction-label {
+
+    color: #f87171;
+
+}
+
+
+.safe-result .prediction-label {
+
+    color: #4ade80;
+
+}
+
+
+.prediction-content h2 {
+
+    font-size: 18px;
+
+    margin: 4px 0 5px;
+
+}
+
+
+.prediction-content p {
+
+    color: #8b95aa;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.features {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 18px;
+
+}
+
+
+.feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 16px;
+
+    background: rgba(15,23,42,0.55);
+
+    border: 1px solid #1f2a40;
+
+    border-radius: 12px;
+
+}
+
+
+.feature-icon {
+
+    width: 36px;
+
+    height: 36px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: rgba(37,99,235,0.1);
+
+    font-size: 17px;
+
+}
+
+
+.feature h3 {
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.feature p {
+
+    font-size: 10px;
+
+    color: #6f7b91;
+
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px 20px;
+
+    color: #566176;
+
+    font-size: 11px;
+
+}
+
+
+footer span {
+
+    margin: 0 5px;
+
+}
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+
+    .navbar {
+
+        padding: 18px;
+
+    }
+
+
+    .main-container {
+
+        padding-top: 30px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 14px;
+
+    }
+
+
+    .email-card {
+
+        padding: 23px;
+
+    }
+
+
+    .features {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .brand p {
+
+        display: none;
+
+    }
+
+
+}
+
+
+@media (max-width: 450px) {
+
+
+    .hero h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .nav-history {
+
+        padding: 8px 11px;
+
+    }
+
+
+    .brand h2 {
+
+        font-size: 16px;
+
+    }
+
+
+}
+/* =========================================
+   HISTORY PAGE
+========================================= */
+
+.history-main {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 50px 20px;
+
+}
+
+
+.history-hero {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.history-small-title {
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    color: #60a5fa;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+
+}
+
+
+.history-hero h1 {
+
+    font-size: 38px;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.history-hero p {
+
+    color: #7d879c;
+
+    font-size: 14px;
+
+}
+
+
+.new-email-button {
+
+    text-decoration: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
+
+}
+
+
+.new-email-button:hover {
+
+    background: #3b82f6;
+
+    transform: translateY(-1px);
+
+}
+
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.history-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.stat-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.85);
+
+    border: 1px solid #263149;
+
+    border-radius: 14px;
+
+}
+
+
+.stat-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+
+}
+
+
+.total-icon {
+
+    background: rgba(59, 130, 246, 0.12);
+
+}
+
+
+.spam-icon {
+
+    background: rgba(239, 68, 68, 0.12);
+
+}
+
+
+.safe-icon {
+
+    background: rgba(34, 197, 94, 0.12);
+
+}
+
+
+.stat-card p {
+
+    color: #7d879c;
+
+    font-size: 11px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.stat-card h2 {
+
+    font-size: 24px;
+
+}
+
+
+
+/* =========================================
+   HISTORY CARD
+========================================= */
+
+.history-card {
+
+    background: rgba(15, 23, 42, 0.85);
+
+    border: 1px solid #263149;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.25);
+
+}
+
+
+.history-card-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 25px 28px;
+
+    border-bottom: 1px solid #263149;
+
+}
+
+
+.history-card-header h2 {
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.history-card-header p {
+
+    color: #6f7b91;
+
+    font-size: 12px;
+
+}
+
+
+.email-count {
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #172036;
+
+    color: #8fa1bf;
+
+    font-size: 11px;
+
+}
+
+
+
+/* =========================================
+   EMAIL LIST
+========================================= */
+
+.email-list {
+
+    padding: 8px 20px;
+
+}
+
+
+.email-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 20px 8px;
+
+    border-bottom: 1px solid #1e293b;
+
+    transition: 0.2s;
+
+}
+
+
+.email-item:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.email-item:hover {
+
+    background: rgba(255,255,255,0.025);
+
+    border-radius: 10px;
+
+}
+
+
+
+/* =========================================
+   EMAIL NUMBER
+========================================= */
+
+.email-number {
+
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #111a2d;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+
+/* =========================================
+   EMAIL INFORMATION
+========================================= */
+
+.email-information {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.email-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.email-sender {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #cbd5e1;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.sender-icon {
+
+    font-size: 13px;
+
+}
+
+
+.email-information h3 {
+
+    font-size: 14px;
+
+    color: #f1f5f9;
+
+    margin-bottom: 6px;
+
+}
+
+
+.email-preview {
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-spam,
+.status-safe {
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+}
+
+
+.status-spam {
+
+    background: rgba(239,68,68,0.1);
+
+    color: #f87171;
+
+    border: 1px solid rgba(239,68,68,0.15);
+
+}
+
+
+.status-safe {
+
+    background: rgba(34,197,94,0.1);
+
+    color: #4ade80;
+
+    border: 1px solid rgba(34,197,94,0.15);
+
+}
+
+
+
+/* =========================================
+   DELETE
+========================================= */
+
+.delete-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #29344a;
+
+    background: transparent;
+
+    color: #64748b;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+
+}
+
+
+.delete-icon:hover {
+
+    background: rgba(239,68,68,0.1);
+
+    border-color: rgba(239,68,68,0.3);
+
+    color: #f87171;
+
+}
+
+
+
+/* =========================================
+   EMPTY HISTORY
+========================================= */
+
+.empty-history {
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+}
+
+
+.empty-history-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #111a2d;
+
+    font-size: 32px;
+
+}
+
+
+.empty-history h2 {
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.empty-history p {
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.empty-action {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    padding: 11px 17px;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.empty-action:hover {
+
+    background: #3b82f6;
+
+}
+
+
+
+/* =========================================
+   HISTORY MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .history-main {
+
+        padding: 30px 15px;
+
+    }
+
+
+    .history-hero {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .history-hero h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .new-email-button {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .history-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .history-card-header {
+
+        padding: 20px;
+
+    }
+
+
+    .email-list {
+
+        padding: 5px 12px;
+
+    }
+
+
+    .email-item {
+
+        align-items: flex-start;
+
+    }
+
+
+    .email-top {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 7px;
+
+    }
+
+
+    .email-preview {
+
+        white-space: normal;
+
+        display: -webkit-box;
+
+        -webkit-line-clamp: 2;
+
+        -webkit-box-orient: vertical;
+
+    }
+
+}
